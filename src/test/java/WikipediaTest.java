@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,12 +16,35 @@ import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+import org.monte.media.FormatKeys;
+import org.monte.media.math.Rational;
+import org.monte.screenrecorder.ScreenRecorder;
+import org.monte.media.Format;
+
+import static org.monte.media.FormatKeys.*;
+import static org.monte.media.VideoFormatKeys.*;
 
 public class WikipediaTest {
     WebDriver driver;
-
+    ScreenRecorder recorder;
     @BeforeSuite
-    void setUp() {
+    void setUp() throws IOException, AWTException {
+        GraphicsConfiguration gconfig = GraphicsEnvironment
+                .getLocalGraphicsEnvironment()
+                .getDefaultScreenDevice()
+                .getDefaultConfiguration();
+
+        recorder = new ScreenRecorder(gconfig,
+                new Format(MediaTypeKey, FormatKeys.MediaType.FILE, MimeTypeKey, MIME_AVI),
+                new Format(MediaTypeKey, FormatKeys.MediaType.VIDEO, EncodingKey,
+                        ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
+                        CompressorNameKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
+                        DepthKey, 24, FrameRateKey, Rational.valueOf(15),
+                        QualityKey, 1.0f,
+                        KeyFrameIntervalKey, 15 * 60),
+                new Format(MediaTypeKey, FormatKeys.MediaType.VIDEO,
+                        EncodingKey,"black", FrameRateKey, Rational.valueOf(30)), null);
+        recorder.start();
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--remote-allow-origins=*");
         chromeOptions.addArguments("--start-maximized");
@@ -59,8 +83,12 @@ public class WikipediaTest {
 
 
         // Find and assert "Search for pages containing <searchTerm>" option
+        wait.ignoring(StaleElementReferenceException.class)
+                .until((WebDriver d) -> {
+                    d.findElement(By.id("cdx-typeahead-search-menu-0"));
+                    return true;
+                });
         WebElement parentElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cdx-typeahead-search-menu-0")));
-        ;
         WebElement searchBySpecificText = parentElement.findElement(By.cssSelector("li:last-child"));
         Assert.assertTrue(searchBySpecificText.getText().contains(searchTerm));
 
@@ -105,7 +133,8 @@ public class WikipediaTest {
     }
 
     @AfterSuite
-    void closeBrowser() {
+    void closeBrowser() throws IOException {
         driver.quit();
+        recorder.stop();
     }
 }
