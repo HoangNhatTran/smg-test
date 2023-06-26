@@ -122,13 +122,10 @@ public class WikipediaTest {
         WebElement searchBySpecificText = parentElement.findElement(By.cssSelector("li:last-child"));
         searchBySpecificText.click();
         //find and select clear button
-        wait.ignoring(StaleElementReferenceException.class)
-                .until((WebDriver d) -> {
-                    d.findElement(By.cssSelector("div#searchText span:last-child")).click();
-                    return true;
-                });
-        //driver.findElement(By.cssSelector("div#searchText span:last-child")).click();
-        Assert.assertFalse(driver.findElement(By.cssSelector("div#searchText span:last-child")).isDisplayed());
+        WebElement clearButton= wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div#searchText span:last-child")));
+        clearButton.click();
+        // assert that cleat button and input text is cleared
+        Assert.assertFalse(clearButton.isDisplayed());
         Assert.assertEquals(driver.findElement(By.cssSelector("input[title='Search Wikipedia']")).getAttribute("value"), "");
     }
 

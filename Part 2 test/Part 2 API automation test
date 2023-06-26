@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "fbd5f797-9ee4-470c-9967-6551cd5e047f",
+		"name": "Wikipedia API test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27621009"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
