@@ -3,16 +3,15 @@
 
 This project is a testing challenge project. Part 1 is manual testcase wrote on an excel templace, part 2 is API automation test using postman, part 3 is UI automation test using Selenium Java
 ## Table of Contents
-- [Installation and usage for Part 1]
-- [Installation and usage for Part 2]
-- [Installation for Part 3] 
-- [Usage for Part 3] 
+- Installation and usage for Part 1
+- Installation and usage for Part 2
+- Installation for Part 3]
+- Usage for Part 3
 ## Installation and usage for Part 1
-1. Make sure you have Microsoft Excel installed.
-2. In the project structure,navigate to `Part 1 test` directory and open the excel file inside it
-3. The excel file contains my test for part 1, the first Excel sheet is to check the testing report, the remaining sheets is basically the same but check for different browsers
+1. In the project structure,navigate to `Part 1 test` directory and open the excel file inside it
+2. The excel file contains my test for part 1, the first Excel sheet is to check the testing report, the remaining sheets is basically the same but check for different browsers
 ## Installation and usage for Part 2
-1. Make sure you have Postman installed. You can download it here https://www.postman.com/downloads/
+1. Download Postman  here [Postman Download](https://www.postman.com/downloads/)
 2. In the project structure,navigate to `Part 2 test` directory and download json file inside it
 3. Open postman, select "Collections" tab
 4. Click "import" button and import the downloaded json file
@@ -28,34 +27,8 @@ To run the UI automation tests using Selenium and Java with TestNG, follow these
 
 2. Install IntelliJ IDEA, an integrated development environment (IDE) for Java. You can download IntelliJ IDEA Community Edition from the JetBrains website: [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/).
 
-3. Clone the repository to your local machine using git clone https://github.com/HoangNhatTran/smg-test
+3. Clone this repository https://github.com/HoangNhatTran/smg-test
 4. Open IntelliJ IDEA and import the cloned project by selecting "Import Project" and choosing the project directory.
-
-5. In the project structure, set up the TestNG dependency:
-
-- Open the "pom.xml" file in the root directory of the project.
-- Add the following dependencies within the `<dependencies>` section:
-
-  ```xml
-  <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>7.4.0</version>
-      <scope>test</scope>
-  </dependency>
-  <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>3.141.59</version>
-  </dependency>
-  <dependency>
-        <groupId>com.github.stephenc.monte</groupId>
-        <artifactId>monte-screen-recorder</artifactId>
-        <version>0.7.7.0</version>
-  </dependency>
-  ```
-
-6. IntelliJ IDEA will automatically download the TestNG and Selenium dependencies based on the dependency
 
 ## Usage for part 3
 
