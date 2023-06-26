@@ -23,9 +23,9 @@ This project is a testing challenge project. Part 1 is manual testcase wrote on 
 
 To run the UI automation tests using Selenium and Java with TestNG, follow these steps:
 
-1. Make sure you have Java Development Kit (JDK) 11 installed on your system. You can download the JDK from the Oracle website: [Java SE Downloads](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
+1. Download the JDK 11: [Java SE Downloads](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
 
-2. Install IntelliJ IDEA, an integrated development environment (IDE) for Java. You can download IntelliJ IDEA Community Edition from the JetBrains website: [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/).
+2. Download IntelliJ: [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/).
 
 3. Clone this repository https://github.com/HoangNhatTran/smg-test
 4. Open IntelliJ IDEA and import the cloned project by selecting "Import Project" and choosing the project directory.
