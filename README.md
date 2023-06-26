@@ -5,7 +5,7 @@ This project is a testing challenge project. Part 1 is manual testcase wrote on 
 ## Table of Contents
 - Installation and usage for Part 1
 - Installation and usage for Part 2
-- Installation for Part 3]
+- Installation for Part 3
 - Usage for Part 3
 ## Installation and usage for Part 1
 1. In the project structure,navigate to `Part 1 test` directory and open the excel file inside it
@@ -40,10 +40,8 @@ To run the UI automation tests using this project, follow these steps:
 
 3. There are 2 testcases in this test class
 
-4. Right-click on a test class or a specific test method and select "Run" to execute the corresponding test case(s).
+4. To run the test, open terminal, type "mvn test" then enter
 
-5. Monitor the test execution progress in the IntelliJ console. You will see the output and any failures or errors encountered during the test run.
+6. A recording of the test will be added to C:\Users\ < user name> \Videos folder
 
-6. A recording of the test will be added to C:\Users\<user>\Videos folder
-
-8. Repeat steps 4-5 whenever you want to run the UI automation tests again
+8. Repeat steps 4 whenever you want to run the UI automation tests again
