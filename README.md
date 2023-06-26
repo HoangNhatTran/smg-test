@@ -1,4 +1,4 @@
-# wikipedia automation test
+# Wikipedia automation test
 [Test URL][https://en.wikipedia.org/wiki/Main_Page]
 
 This project is a testing challenge project. Part 1 is manual testcase wrote on an excel templace, part 2 is API automation test using postman, part 3 is UI automation test using Selenium Java
@@ -25,7 +25,8 @@ To run the UI automation tests using Selenium and Java with TestNG, follow these
 
 1. Download the JDK 11: [Java SE Downloads](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
 
-2. Download IntelliJ: [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/).
+2. Download IntelliJ: [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/)
+3. Download Maven 3-9-3: [Maven Download](https://maven.apache.org/download.cgi)
 
 3. Clone this repository https://github.com/HoangNhatTran/smg-test
 4. Open IntelliJ IDEA and import the cloned project by selecting "Import Project" and choosing the project directory.
